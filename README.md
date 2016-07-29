@@ -5,4 +5,4 @@
 - [markdown手记](MK_KEY.md)—文档利器
 
 ## H5
-- [可能是理解viewport最好的方式](h5/viewport.md)-移动端适配
+- [可能是理解viewport最好的方式](h5/viewport.md)—移动端适配
