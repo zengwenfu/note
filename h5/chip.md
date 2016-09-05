@@ -1,6 +1,6 @@
 # 知识碎片
 
-## npm run command 不完全等于直接在命令行输入command
+## 1. npm run command 不完全等于直接在命令行输入command
 ```
     "scripts": {
         "start": "cross-env NODE_ENV=dev supervisor -w server,app.js app",
