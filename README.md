@@ -6,4 +6,4 @@
 
 ## H5
 - [可能是理解viewport最好的方式](h5/viewport.md)—移动端适配
-- [碎片](h5/chip.md)—知识碎片
+- [前端碎片](h5/chip.md)—前端知识小碎片
