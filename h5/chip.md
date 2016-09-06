@@ -14,7 +14,13 @@
 
 > 在命令行输入npm run public 和直接输入node app_public.js都不会有问题，然而执行node run start正确的情况下，执行cross-env NODE_ENV=dev supervisor -w server,app.js app却会报错。原因是，npm run 能将 /node_modules/.bin 加到你的PATH中，gulp进行了全局安装所以public命令不管怎么执行都是可以的，然而coss-env和supervisor都未进行全局安装，直接在命令行执行是找不到命令的，而使用npm run, 在/node_modules/.bin 目录下找到了命令，所以可以正常的跑
 
-## 2. flex布局不可以忽视的子元素的原始宽度
+## 2. 点击穿透的成因
+> 事件的触发顺序 touchstart-->touchmove-->touchend（约等待300ms，没有双击的行为触发click，为了增强用户体验，很多经典的框架新增了tap事件的封装（如zepto），在touchend触发后一个较短的时间内（大概250ms）触发tap。
+> 然后再来看看点击穿透的场景，就很容易看懂了，再点击蒙层的时候，我们监听了tap让蒙层消失，当到时间触发click的时候，再点击的位置就剩下蒙层背后的输入框了，给人以点击穿透的感觉，在tap的时候阻止后续的click就可以解决
+> 同样的原理还会在另外一个地方带来问题，页面上有很多input，点击一个input软键盘启动，点击页面空白处，关闭软键盘，但是事与愿违，软键盘关闭之后又被重新打开。
+
+
+## 3. flex布局不可以忽视的子元素的原始宽度
 ```
     //css代码
     .box{
