@@ -58,3 +58,6 @@
 ![](../images/flex.png)
 > 初尝试flex布局经常绕不过一个坑，为什么明明item的flex都等于1，然而三个item确不等宽？
 > 其实flex项目伸缩的量是基于”父容器的宽度 - 子元素原始宽度的总和“，上例中，子元素平均分配了可分配的量，加上不相等的基量之后，自然宽度就不一样了。把item的width设置为0，三个item就等宽了
+
+## 4.webpack loader需要放到node-modules下
+> 写一个webpack loader并不复杂，按照官方教程来就可以了，但是写好了之后，使用并没有这么自由，不是任意放一个目录，webpack都能准确找到的，只能放到项目的node-modules下。然而node-modules一般都是要脱离版本管理的，这就不便于移植了，于是最好的办法就是上传到npm，通过npm install --save-dev来管理
