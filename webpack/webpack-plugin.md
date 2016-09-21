@@ -13,14 +13,14 @@
 - [后话](#4)
 
 
-## <span id='1'>为什么说webpack不适合多页面应用</span>
+## <h2 id='1'>为什么说webpack不适合多页面应用</h2>
 其实最主要的原因就是找不到适合处理多个html模板的插件:
 
 - 对于react，webpack跟它是天生融合的，因为react本身就承担了web应用的view层，作为js它干了本该由html干的事情，html只需要提供一个容器引入生成的bundle.js文件，根本不需要关注html需要如何处理的问题
 - 对于单页面应用，情况也大体类似，js承担了很多页面渲染的工作，如果说唯一的入口html还需要处理的话，可以使用html-webpack-plugin插件，它可以生成一个html，注入所有生成的js文件(如果使用了extract-text-webpack-plugin的话还会包括所有的css文件)，对于body中的内容，可以传入模板和解析模板的loader
 - 对于多页面应用，情况就稍显复杂了。对不同的页面单独新建一个html-webpack-plugin，并且传入不同的模板，通过参数chunks和excludeChunks来过滤html模板文件需要注入的实体，这是一个方法，但不是一个好方法。开发人员在开发html文件的时候需要转移掉太多注意力了，这不是一个优秀的开发框架的特点。于是就出现了曲线救国的方法，webpack不将html模板纳入管理范围，交由gulp来解析搬运html。这种看似皆大欢喜的解决办法实属无奈，对于html中的外链（js、css和图片），如果我们打包结果加上了hash值，为了html的引用正确，还得进行非常耗时的遍历判断替换。
 
-## <span id='2'>没有就写一个呗</span>
+## <h2 id='2'>没有就写一个呗</h2>
 为了处理多页面应用，我们需要这样一个插件：
 
 1. 配置一个模板路径（templatePath），插件就可以自动找到该目录下所有的html模板，准备解析
@@ -39,8 +39,8 @@
 
 
 
-## <span id='3'>怎样写这个插件</span>
-### <span id='3.1'>查文档</span>
+## <h2 id='3'>怎样写这个插件</h2>
+### <h3 id='3.1'>一、查文档</h3>
 并没有太多人愿意去写一个webpack-plugin，Because why?
 当你打开webpack的官方文档[how to write a plugin](https://github.com/webpack/docs/wiki/how-to-write-a-plugin)的时候，就在第一段，有一句话特别醒目:
 >Plugins expose the full potential of the Webpack engine to third-party developers. Using staged build callbacks, developers can introduce their own behaviors into the Webpack build process. Building plugins is a bit more advanced than building loaders, because you'll need to understand some of the Webpack low-level internals to hook into them. **Be prepared to read some source code!**
@@ -55,7 +55,7 @@ however，这个文档还是要读下去的，英文不好的话，网上还有�
 
 然而，读完整个文档，还是无法写出满足我们需求的插件，看来必须要走出自己的思维舒适区，去读源码了，读别人的源码的要诀是理解别人的设计思想
 
-### <span id='3.2'>webpack的设计思想</span>
+### <h3 id='3.2'>二、webpack的设计思想</h3>
 要说明webpack的设计思想，有必要拿gulp的处理流程来进行对比
 gulp处理流程：
 ![gulp流程](../images/webpack/gulp.png)
@@ -73,7 +73,7 @@ webpack把各种资源都当成模块，处理模块之间的依赖关系，合�
 
 OK，理解了整个工作过程，再去读源码，就不用这么迷茫了
 
-### <span id='3.3'>html-webpack-plugin分析</span>
+### <h3 id='3.3'>三、html-webpack-plugin分析</h3>
 倘若等到把webpack的每个细节搞得清清楚楚（有空的时候去还是有必要去读这优秀的代码，受益匪浅），再去着手写这个插件，未免用劲太蛮，最精准狠的办法是找一个接近的插件，先读懂它，再改造它，没错这个插件就是html-webpack-plugin。
 过程就比较曲折了，不过效果是可观的：
 
@@ -133,7 +133,7 @@ OK，理解了整个工作过程，再去读源码，就不用这么迷茫了
       })
 ```
 
-### <span id='3.4'>改造之路</span>
+### <h3 id='3.4'>四、改造之路</h3>
 通过上节的分析，可以开启我们漫漫的改造之路了
 
 1. 首先，我们需要的是可以处理多个模板，那么我们应该传入模板所在的路径，如果有需要还可以传入模板后缀，以及需要排除的文件，对路径下的模板进行过滤，所以第一件事情，我们要写一个遍历目录下所有模板文件的方法，如果传入了输出相对目录path，还需要对文件名进行下处理
@@ -196,7 +196,7 @@ OK，理解了整个工作过程，再去读源码，就不用这么迷茫了
 3. 同样主流程emit等待子编译流程的处理结果，对每一个模板的处理结果，匹配其中的```##entry.[name].js/css##```，替换成对应的chunks文件（精准的计算相对路径）
 4. 将结果加入assets中，准备输出
 
-## <span id='4'>后话</span>
+## <h2 id='4'>后话</h2>
 [改造后插件：muti-html-webpack-plugin](https://github.com/zengwenfu/muti-html-webpack-plugin)
 [compile-nunjucks-loader](https://github.com/zengwenfu/compile-nunjucks-loader)
 
