@@ -197,8 +197,8 @@ OK，理解了整个工作过程，再去读源码，就不用这么迷茫了
 4. 将结果加入assets中，准备输出
 
 ## <h2 id='4'>后话</h2>
-[改造后插件：muti-html-webpack-plugin](https://github.com/zengwenfu/muti-html-webpack-plugin)
-[compile-nunjucks-loader](https://github.com/zengwenfu/compile-nunjucks-loader)
+- [改造后插件：muti-html-webpack-plugin](https://github.com/zengwenfu/muti-html-webpack-plugin)
+- [附带一个nunjucks解析器：compile-nunjucks-loader](https://github.com/zengwenfu/compile-nunjucks-loader)
 
     
 
