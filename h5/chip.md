@@ -61,3 +61,10 @@
 
 ## 4.webpack loader需要放到node-modules下
 > 写一个webpack loader并不复杂，按照官方教程来就可以了，但是写好了之后，使用并没有这么自由，不是任意放一个目录，webpack都能准确找到的，只能放到项目的node-modules下。然而node-modules一般都是要脱离版本管理的，这就不便于移植了，于是最好的办法就是上传到npm，通过npm install --save-dev来管理
+
+## 5.console.log(obj),只会输出obj本身的属性，不会输出在原型链上的属性，要想遍历包括原型链上的属性，需要：
+```
+    for(var key in obj) {
+        console.log(key);
+    }
+```
