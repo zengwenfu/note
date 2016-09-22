@@ -193,7 +193,7 @@ OK，理解了整个工作过程，再去读源码，就不用这么迷茫了
         childCompiler.apply(itemToPlugin(template[name], name));
       });
 ```
-3. 同样主流程emit等待子编译流程的处理结果，对每一个模板的处理结果，匹配其中的```##entry.[name].js/css##```，替换成对应的chunks文件（精准的计算相对路径）
+3. 同样主流程emit等待子编译流程的处理结果，对每一个模板的处理结果，匹配其中的```##entry.[name].js/css##```，替换成对应的chunks文件
 4. 将结果加入assets中，准备输出
 
 ## <h2 id='4'>后话</h2>
