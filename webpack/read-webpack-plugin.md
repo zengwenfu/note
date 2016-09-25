@@ -1,5 +1,5 @@
 # webpack源码分析（一）— *Tapable插件架构*
-> 在前面的文章[webpack不适合多页面应用？你写的插件还不够多](read-webpack-plugin.md)中提到过，webpack核心使用了Tapable实现事件的发布订阅处理的插件架构([Tapable中文文档](tapable.md))，今天就具体来分析下webpack基于Tapable的插件架构
+> 在前面的文章[webpack不适合多页面应用？你写的插件还不够多](webpack-plugin.md)中提到过，webpack核心使用了Tapable实现事件的发布订阅处理的插件架构([Tapable中文文档](tapable.md))，今天就具体来分析下webpack基于Tapable的插件架构
 
 ## 找到代码入口
 - 想必你已经使用过`npm install webpack`命令下载过webpack，那么在你的node_modules目录下找到webpack。
