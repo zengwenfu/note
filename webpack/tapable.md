@@ -1,5 +1,5 @@
 # Tapable中文文档
->非直译，加入了一些自己的理解
+>非直译，加入了一些自己的理解，[原文](https://github.com/webpack/tapable)
 
 ## Tapable
 ```
