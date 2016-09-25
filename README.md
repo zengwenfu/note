@@ -13,3 +13,4 @@
 ## webpack
 - [webpack不适合多页面应用？你写的插件还不够多](webpack/webpack-plugin.md)—深入理解webpack
 - [tapable中文文档](webpack/tapable.md)—基于事件发布订阅的插件架构
+- [webpack源码分析（一）— *Tapable插件架构*](webpack/read-webpack-plugin.md)—webpack源码分析系列
