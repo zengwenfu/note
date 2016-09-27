@@ -1,2 +1,4 @@
 #忽略所有.DS_Store
 .DS_Store
+#忽略npm-debug.log
+.gitignore
