@@ -4,6 +4,7 @@
 ## 工具技巧篇
 - [markdown手记](tools/MK_KEY.md)—文档利器
 - [如何阅读框架源代码](tools/read-source.md)—学习技巧
+- [为什么不能随随便便连接不明wifi](tools/fiddler.md)—抓包工具原理
 
 ## node
 - [基于代理的接口合并方案](node/freedom-api.md)—freedom-api
