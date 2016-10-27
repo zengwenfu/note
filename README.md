@@ -8,6 +8,7 @@
 
 ## node
 - [基于代理的接口合并方案](node/freedom-api.md)—freedom-api
+- [node爬虫](node/reptile.md)—node入门场景之一
 
 ## H5
 - [前端性能优化的三个维度](h5/performance.md)—性能优化思路

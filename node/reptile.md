@@ -149,8 +149,6 @@ http://www.jianshu.com/collections/16/notes?order_by=likes_count&page=2
 开发爬虫是一件很酷的事情，在这个过程中还能学到知识，提升学习兴趣，从爬虫做起~~
 [源码](https://github.com/zengwenfu/jian-analyse)
 
-欢迎留言讨论，如果对您有帮助，请留个赞~~
-
 
 
 
