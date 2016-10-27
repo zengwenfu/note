@@ -10,6 +10,7 @@
 - [基于代理的接口合并方案](node/freedom-api.md)—freedom-api
 
 ## H5
+- [前端性能优化的三个维度](h5/performance.md)—性能优化思路
 - [可能是理解viewport最好的方式](h5/viewport.md)—移动端适配
 - [前端碎片](h5/chip.md)—前端知识小碎片
 - [跟手拖拽的转盘指针](h5/wheel.md)—移动端小效果
