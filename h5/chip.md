@@ -68,3 +68,18 @@
         console.log(key);
     }
 ```
+
+## 6.git本地仓库跟远程仓库关联
+```
+    cd existing_folder
+    git init
+    git remote add origin git@10.20.11.218:FFYunYing/drag-animate.git
+    git add .
+    git commit
+    git push -u origin master
+```
+
+## 7.git本地分支关联远程分支
+```
+    git branch --set-upstream-to=origin/<remote-branch> local-branch
+```
