@@ -18,7 +18,8 @@
 - [前端碎片](h5/chip.md)—前端知识小碎片
 - [跟手拖拽的转盘指针](h5/wheel.md)—移动端小效果
 - [理解js面向对象的最佳姿势](h5/oo.md)—语言基础
-- [前端开发热更新原理解读](h5/hot.md)
+- [前端开发热更新原理解读](h5/hot.md)—精耕细作
+- [web表单中的enctype是什么鬼](h5/enctype.md)—精耕细作
 
 ## webpack
 - [webpack不适合多页面应用？你写的插件还不够多](webpack/webpack-plugin.md)—深入理解webpack
@@ -27,3 +28,4 @@
 
 ## 周报
 - [平安金融科技前端技术周报(第一期)](weekly/one.md)
+- [平安金融科技前端技术周报(第二期)](weekly/two.md)
