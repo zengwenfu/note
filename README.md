@@ -20,6 +20,7 @@
 - [理解js面向对象的最佳姿势](h5/oo.md)—语言基础
 - [前端开发热更新原理解读](h5/hot.md)—精耕细作
 - [web表单中的enctype是什么鬼](h5/enctype.md)—精耕细作
+- [div拖拽缩放jquery插件编写](https://github.com/zengwenfu/z-resize)—jquery小插件
 
 ## webpack
 - [webpack不适合多页面应用？你写的插件还不够多](webpack/webpack-plugin.md)—深入理解webpack
