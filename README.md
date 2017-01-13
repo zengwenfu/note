@@ -28,6 +28,9 @@
 - [tapable中文文档](webpack/tapable.md)—基于事件发布订阅的插件架构
 - [webpack源码分析（一）— *Tapable插件架构*](webpack/read-webpack-plugin.md)—webpack源码分析系列
 
+## 简书前端周top10收录
+- [给前端好文多一首歌的时间（一）](jianTop/20170113.md)—2017.01.13
+
 ## 周报
 - [平安金融科技前端技术周报(第一期)](weekly/one.md)
 - [平安金融科技前端技术周报(第二期)](weekly/two.md)
