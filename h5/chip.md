@@ -105,3 +105,19 @@ ps: CORS请求默认不发送Cookie和HTTP认证信息。如果要把Cookie发�
 
 参考[跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html)
 
+## 9. html设置了overflow:hidden 在ios上fixed无效的问题
+```
+    html {
+        overflow: hidden;
+    }
+
+    .foot {
+        position: fixed;
+        bottom: 0;
+    }
+
+```
+
+这个foot虽然设置了fixed，但是在ios设备上还是会跟着滚动条的滑动而移动
+> 换句话说，页面内容并没有因为html设置了overflow:hidden额无法滚动
+

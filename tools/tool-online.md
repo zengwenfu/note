@@ -4,6 +4,7 @@
 3. [在线制作雪碧图](http://alloyteam.github.io/gopng/)
 4. [在线画原型图--墨刀](https://modao.cc/)
 5. [在线网页设计-DesignMantic](https://www.designmantic.com/zh/web)
+6. [在线图片设计工具-创客贴](https://www.chuangkit.com/index.html)
 
 ## 收藏
 1. [javascript 异步原理](https://wangdashuaihenshuai.github.io/2015/10/31/%E5%BC%82%E6%AD%A5%E5%8E%9F%E7%90%86/)
