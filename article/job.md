@@ -445,6 +445,12 @@
 
 ### 闭包
 
+### apply, call
+```
+  　　foo.call(this, arg1,arg2,arg3) == foo.apply(this, arguments)==this.foo(arg1, arg2, arg3)
+
+```
+
 ### 字符串编码
 > [简单明了区分escape、encodeURI和encodeURIComponent](http://www.cnblogs.com/season-huang/p/3439277.html)
 
@@ -665,6 +671,145 @@ class AccountModel extends baseModel {
 > [Node.js 常见面试题](http://www.liuzhixiang.com/2015/07/01/Node.js-Interview-Questions-and-Answers/)
 
 ## 算法
+1. 逆推法求解阶梯问题   
+[逆推法求解阶梯问题](http://www.jianshu.com/p/c38db9ee98b3)   
+2. KMP匹配子串 [字符串匹配的KMP算法](http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html)
+```
+  // 移动位数 = 已匹配的字符数 - 对应的部分匹配值
+
+  //部分匹配表实现
+  function kmpGetStrPartMatchValue(str) {
+      var prefix = [];
+      var suffix = [];
+      var partMatch = [];
+      for(var i=0,j=str.length;i<j;i++){
+          var newStr = str.substring(0,i+1);
+          if(newStr.length == 1){
+              partMatch[i] = 0;
+          } else {
+              for(var k=0;k<i;k++){
+                  prefix[k] = newStr.slice(0,k+1);
+                  suffix[k] = newStr.slice(-k-1);
+                  if(prefix[k] == suffix[k]){
+                      partMatch[i] = prefix[k].length;
+                  }
+              }
+              if(!partMatch[i]){
+                  partMatch[i] = 0;
+              }
+          }
+      }
+      prefix.length = 0;
+      suffix.length = 0;
+      return partMatch;
+  }
+
+
+  // 回退
+  function KMP(sourceStr,targetStr){
+      var partMatchValue = kmpGetStrPartMatchValue(targetStr);
+      var result = false;
+      for(var i=0,j=sourceStr.length;i<j;i++){
+          for(var m=0,n=targetStr.length;m<n;m++){
+              if(str.charAt(m) == sourceStr.charAt(i)){
+                  if(m == targetStr.length-1){
+                      result = true;
+                      break;
+                  } else {
+                      i++;
+                  }
+              } else {
+                  if(m>0 && partMatchValue[m-1] > 0){
+                      m = partMatchValue[m-1]-1;
+                  } else {
+                      break;
+                  }
+              }
+          }
+          if(result){
+              break;
+          }
+      }
+      return result;
+  }
+
+var s = "BBC ABCDAB ABCDABCDABDE";
+var t = "ABCDABD";
+console.log(KMP(s,t));
+//output: true
+```
+3. 异或求唯一数字
+4. 二进制找毒牛奶
+5. 字符串反转
+6. 数组去重 [也谈JavaScript数组去重](http://cache.xiaomiquan.com/dbc87a98a7c428c131ef70182d265e35204ccacf920017b03557e4de735ccbfd/) 
+```
+  function unique(arr){
+      var set = new Set(arr);
+      return Array.from(set);
+  }      
+```
+7. 求整数数组的和最大的连续子串
+```
+  
+```
+8. 找出整数数组的最大差值
+```
+  let min = Math.min(...arr)；
+  let max = Math.max(...arr)；
+  ret=max - min；
+
+
+  //PS: arguments转数组
+  var array = Array.prototype.slice.call(arguments);
+  //扩展运算符的es5写法
+  // ES5的写法
+  function f(x, y, z) {
+    // ...
+  }
+  var args = [0, 1, 2];
+  f.apply(null, args);
+
+  // ES6的写法
+  function f(x, y, z) {
+    // ...
+  }
+  var args = [0, 1, 2];
+  f(...args);
+```
+9. 排序算法
+10. 二维数组排序
+11. 遍历叔 递归  循环（栈）
+12. 回溯
+```
+  // 八皇后问题求解
+  function check2(arr, n) {
+      for(var i = 0; i <= n - 1; i++) {
+          if((Math.abs(arr[i] - arr[n]) == n - i) || (arr[i] == arr[n])) {
+              return false;
+          }
+      }
+      return true;
+  }
+
+  // 参考网址
+  var arr = [], n = 4;
+  function backtrack(k) {
+      if(k > n) {
+          console.log(arr);
+      } else {
+          for(var i = 1;i <= n; i++) {
+              arr[k-1] = i;
+              if(check2(arr, k-1)) {
+                  backtrack(k + 1);
+              }
+          }
+      }
+  }
+
+  backtrack(1);
+```
+13. 分金条
+14. 堆排序
 
 ## node
 > [Node.js 常见面试题](http://www.liuzhixiang.com/2015/07/01/Node.js-Interview-Questions-and-Answers/)
